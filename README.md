@@ -4,21 +4,19 @@ This document provides a performance comparison between `Actix-Web`, `Hyper`, `a
 
 ## Performance Summary Table
 
-| Metric                    | Rocket       | Actix-Web    | Hyper        | uWS          |
-|---------------------------|--------------|--------------|--------------|--------------|
-| Total Requests            | 1,366,528    | 1,110,920    | 942,697      | 17,055       |
-| Success Rate              | 99.99%       | 99.99%       | 99.99%       | 95.54%       |
-| Throughput (reqs/sec)     | ~45,551      | ~37,027      | ~31,418      | ~481         |
-| Avg Request Duration (ms) | 3.67         | 4.56         | 5.54         | 13.71        |
-| Errors                    | 68           | 61           | 55           | 760          |
-| Peak Response Time (ms)   | 107.56       | 105.96       | 62.37        | 726.41       |
-| VUs                       | 200          | 200          | 200          | 13-200       |
-| VUs Max                   | 200          | 200          | 200          | 200          |
-
+| Metric                    | Rocket    | Actix-Web | Hyper   | async_uws |
+| ------------------------- | --------- | --------- | ------- | --------- |
+| Total Requests            | 1,366,528 | 1,110,920 | 942,697 | 17,055    |
+| Success Rate              | 99.99%    | 99.99%    | 99.99%  | 95.54%    |
+| Throughput (reqs/sec)     | ~45,551   | ~37,027   | ~31,418 | ~481      |
+| Avg Request Duration (ms) | 3.67      | 4.56      | 5.54    | 13.71     |
+| Errors                    | 68        | 61        | 55      | 760       |
+| Peak Response Time (ms)   | 107.56    | 105.96    | 62.37   | 726.41    |
+| VUs                       | 200       | 200       | 200     | 13-200    |
+| VUs Max                   | 200       | 200       | 200     | 200       |
 
 <details>
   <summary>K6 Raw Summary for Rocket</summary>
-
 
 ✗ response code was 200
 ↳ 99% — ✓ 1,366,528 / ✗ 68
@@ -43,7 +41,6 @@ vus............................: 200 min=200 max=200
 vus_max........................: 200 min=200 max=200
 
 </details>
-
 
 <details>
   <summary>K6 Raw Summary for Actix-Web</summary>
@@ -96,7 +93,6 @@ iteration_duration.............: avg=6.19ms min=30.08µs med=4.16ms max=82.2ms p
 iterations.....................: 942,697 31,418.492283/s
 vus............................: 200 min=200 max=200
 vus_max........................: 200 min=200 max=200
-
 
 </details>
 
