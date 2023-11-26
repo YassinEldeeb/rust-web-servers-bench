@@ -1,0 +1,13 @@
+[package]
+name = "async_uws"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+regex = "1.10.2"
+
+[workspace]
+members = ["actix-web", "hyper", "rocket", "async_uws"]
+resolver = "2"
